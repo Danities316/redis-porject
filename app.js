@@ -77,7 +77,6 @@ const searchBooks = async (book) =>{
 const getBooksData = async (req, res) =>{
     let books = req.body.id;
     let result;
-    var placeHldr = '<img src="https://via.placeholder.com/150">';
     try {
        result = await searchBooks(books);
        result.items[0]
