@@ -1,0 +1,21 @@
+<script>
+let swap = Boolean;
+function buubleSort(arr){
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = 1; j < arr.length-i; j++) {
+            if(arr[j] < arr[j - 1]){
+                let temp = arr[j];
+                arr[j] = arr[j - 1]
+                arr[j - 1] = temp
+				swap = true;
+            }
+            
+        }
+		if(!swap) break;
+        
+    }
+    return arr;
+}
+const arr = [3,4,2,1,5]
+console.log(buubleSort(arr))
+</script>

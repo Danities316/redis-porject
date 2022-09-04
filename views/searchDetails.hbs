@@ -1,0 +1,45 @@
+  <div class="text-center"><h1> Search result</h1></div>
+  {{!-- Using for loops(each) from handlebars --}}
+{{#each this}}
+ <div class="container mb-5">
+   {{#items}}
+  <div class="card-group h-25">
+    <div class="card m-2">
+      <img class="card-img-top img-thumbnail" src="{{volumeInfo.imageLinks.thumbnail}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">Title: {{volumeInfo.title}}</h3>
+        <p class="card-text">Author: <strong>{{volumeInfo.authors}}</strong></p>
+        <a href="{{volumeInfo.previewLink}}" class="btn btn-primary">Download Link</a>
+      </div>
+    </div>
+  {{!-- Second Card --}}
+     <div class="card m-2 h-25">
+      <img class="card-img-top img-thumbnail" src="{{volumeInfo.imageLinks.thumbnail}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">Title: {{volumeInfo.title}}</h3>
+        <p class="card-text">Author: <strong>{{volumeInfo.authors}}</strong></p>
+       <a href="{{volumeInfo.previewLink}}" class="btn btn-primary">Download Link</a>
+      </div>
+    </div>
+    
+{{!-- third Card --}}
+     <div class="card m-2 h-25">
+      <img class="card-img-top img-thumbnail" src="{{volumeInfo.imageLinks.thumbnail}}" alt="Card image cap">
+      <div class="card-body">
+        <h3 class="card-title">Title: {{volumeInfo.title}}</h3>
+        <p class="card-text">Author: <strong>{{volumeInfo.authors}}</strong></p>
+       <a href="{{volumeInfo.previewLink}}" class="btn btn-primary">Download Link</a>
+      </div>
+    </div>
+   
+
+  </div>
+    {{/items}}
+ </div>
+{{/each}}
+<a href="/" class="btn btn-dark text-center"><h3> Home</h3></a>
+
+ 
+
+
+
