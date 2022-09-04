@@ -21,5 +21,8 @@
     "nodemon": "^2.0.19",
     "redis": "^4.2.0",
     "winston": "^3.8.1"
+  },
+  "engines": {
+    "node": "16.x"
   }
 }
