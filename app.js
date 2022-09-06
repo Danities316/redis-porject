@@ -104,11 +104,4 @@ app.post('/search/books', cacheData, getBooksData)
 
 module.exports = app;
 
-// https://developers.google.com/identity/protocols/oauth2   - 
-// https://developers.google.com/books/docs/v1/using         -             google api for books guide
-
-// https://www.digitalocean.com/community/tutorials/how-to-implement-caching-in-node-js-using-redis  - Inspirations
-
-// https://github.com/zentech/Book-Finder
-// https://www.youtube.com/watch?v=bsZKDIaij-A --- youtube for google book finder
 
