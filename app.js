@@ -6,7 +6,14 @@ const redis = require('redis');
 
 
 // Creating Redis client
-let client = redis.createClient({ url: 'redis://redis-server:6379' });
+// Configuring Redis to work on Heroku
+let client = redis.createClient({ 
+    url: process.env.REDIS_URL,
+    socket: {
+      tls: true,
+      rejectUnauthorized: false
+    }
+ });
 client.connect().then(() =>{
     console.log('Redis is now connected........')
 })
