@@ -6,14 +6,7 @@ const redis = require('redis');
 
 
 // Creating Redis client
-// Configuring Redis to work on Heroku
-let client = redis.createClient({ 
-    url: process.env.REDIS_URL,
-    socket: {
-      tls: true,
-      rejectUnauthorized: false
-    }
- });
+let client = redis.createClient({url: process.env.REDIS_URL});
 client.connect().then(() =>{
     console.log('Redis is now connected........')
 })
@@ -111,4 +104,11 @@ app.post('/search/books', cacheData, getBooksData)
 
 module.exports = app;
 
+// https://developers.google.com/identity/protocols/oauth2   - 
+// https://developers.google.com/books/docs/v1/using         -             google api for books guide
+
+// https://www.digitalocean.com/community/tutorials/how-to-implement-caching-in-node-js-using-redis  - Inspirations
+
+// https://github.com/zentech/Book-Finder
+// https://www.youtube.com/watch?v=bsZKDIaij-A --- youtube for google book finder
 
