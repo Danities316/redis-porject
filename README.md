@@ -1,6 +1,6 @@
 # Google Book API and Redis Project
 
-I build this project with the intension to understand the functionality of how Redis work and to get a bit deeper into Google Books API(I love books, iam planning of build a book related app soon).
+I build this project with the intention to understand the functionality of how Redis work and to also get a bit deeper into Google Books API(I love books, iam planning of build a book related app soon).
 
 ## Table of contents
 
@@ -35,13 +35,14 @@ My challenge was to build out this Books Search app using the [Google Book API](
 
 ### Links
 
-- Solution URL: https://github.com/Danities316/Advice-generator-app-main
-- Live Site URL: https://danities316.github.io/Advice-generator-app-main/
+- Solution URL: https://github.com/Danities316/redis-porject
+- Live Site URL: https://shrouded-mesa-22373.herokuapp.com/
 
 ## My process
 - I used googleapis for the font by @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap');
 - I Creatively create responsive landing page using boostrap 5, i was greatly inspired by the work of others projects
 - I simply fetch google book API data using **Axios**, creat an in-memory key-value pairs to save it on the local browser for faster loading.
+- Deploying the project to Heroku - I have to understand the steps and process ofhosting an in-memory database online
 
 ### Built with
 - Semantic HTML5 markup
@@ -55,7 +56,8 @@ My challenge was to build out this Books Search app using the [Google Book API](
 - Fetching API data and manipulating them
 - How to use Redis, it functionalities and methods
 - Deep understanding of How Google Books API works
-- How to create mobile-first project
+- How to create mobile-first projec
+- Deploying Redis project to either Heroku or any other cloud base services
 
 
 ### Continued development
