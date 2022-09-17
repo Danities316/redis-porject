@@ -8,8 +8,8 @@ const redis = require('redis');
 // Creating Redis client
 let client;
 if(process.env.REDISCLOUD_URL){
-    let redisURL = url.parse(process.env.REDISCLOUD_URL);
-    client = redis.createClient(redisURL)
+    // let redisURL = url.parse(process.env.REDISCLOUD_URL);
+    client = redis.createClient(process.env.REDIS_URL)
     // client.connect().then(() =>{
     //     console.log('Redis is now connected........')
     // })
