@@ -6,18 +6,18 @@ const redis = require('redis');
 
 
 // Creating Redis client
-let client;
-if(process.env.REDISCLOUD_URL){
+let redisClient;
+if(process.env.REDIS_URL){
     // let redisURL = url.parse(process.env.REDISCLOUD_URL);
-    client = redis.createClient(process.env.REDIS_URL)
-    // client.connect().then(() =>{
+    redisClient = redis.createClient(process.env.REDIS_URL)
+    // redisClient.connect().then(() =>{
     //     console.log('Redis is now connected........')
     // })
 } else {
-    client = redis.createClient()
+    redisClient = redis.createClient()
 }
-// client = redis.createClient({url: process.env.REDIS_URL});
-// client.connect().then(() =>{
+// redisClient = redis.createClient({url: process.env.REDIS_URL});
+// redisClient.connect().then(() =>{
 //     console.log('Redis is now connected........')
 // })
 
@@ -42,7 +42,7 @@ app.get('/', (req, res) =>{
     res.render('home');
 })
 
-let redisClient;
+
 // Creating redis clinet instance
 (async()=>{
     redisClient = redis.createClient();
