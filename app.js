@@ -32,18 +32,17 @@ app.get('/', (req, res) =>{
 
 // Creating Redis client
 let redisClient;
-redisClient = redis.createClient({
-    url: process.env.REDIS_URL
-  }); 
 
 // Creating redis clinet instance
-// (async()=>{
-//     redisClient = redis.createClient();
+(async()=>{
+    redisClient = redis.createClient({
+        url: process.env.REDIS_URL
+      }); 
 
-//     redisClient.on("error", (error) => console.log(`Error: ${error}`))
+    redisClient.on("error", (error) => console.log(`Error: ${error}`))
 
-//     await redisClient.connect();
-// })();
+    await redisClient.connect();
+})();
 
 
 // Creating in-memory Redis catch data
