@@ -6,10 +6,20 @@ const redis = require('redis');
 
 
 // Creating Redis client
-let client = redis.createClient({url: process.env.REDIS_URL});
-client.connect().then(() =>{
-    console.log('Redis is now connected........')
-})
+let client;
+if(process.env.REDISCLOUD_URL){
+    let redisURL = url.parse(process.env.REDISCLOUD_URL);
+    client = redis.createClient(redisURL)
+    // client.connect().then(() =>{
+    //     console.log('Redis is now connected........')
+    // })
+} else {
+    client = redis.createClient()
+}
+// client = redis.createClient({url: process.env.REDIS_URL});
+// client.connect().then(() =>{
+//     console.log('Redis is now connected........')
+// })
 
 // require('dotenv').config();
 const app = express();
