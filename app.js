@@ -9,7 +9,15 @@ const redis = require('redis');
 let redisClient;
 if(process.env.REDIS_URL){
     // let redisURL = url.parse(process.env.REDISCLOUD_URL);
-    redisClient = redis.createClient(process.env.REDIS_URL)
+    redisClient = redis.createClient(
+        redis.createClient({
+            url: process.env.REDIS_URL,
+            socket: {
+              tls: true,
+              rejectUnauthorized: false
+            }
+          });          
+    )
     // redisClient.connect().then(() =>{
     //     console.log('Redis is now connected........')
     // })
