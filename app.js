@@ -5,32 +5,12 @@ const axios = require('axios');
 const redis = require('redis');
 
 
-// Creating Redis client
-let redisClient;
-if(process.env.REDIS_URL){
-    // let redisURL = url.parse(process.env.REDISCLOUD_URL);
-    redisClient = redis.createClient(
-        redis.createClient({
-            url: process.env.REDIS_URL,
-            socket: {
-              tls: true,
-              rejectUnauthorized: false
-            }
-          });          
-    )
-    // redisClient.connect().then(() =>{
-    //     console.log('Redis is now connected........')
-    // })
-} else {
-    redisClient = redis.createClient()
-}
-// redisClient = redis.createClient({url: process.env.REDIS_URL});
-// redisClient.connect().then(() =>{
-//     console.log('Redis is now connected........')
-// })
+     
 
 // require('dotenv').config();
 const app = express();
+
+
 
 //Parse application
 app.use(bodyParser.urlencoded({ extended: false}))
@@ -50,6 +30,11 @@ app.get('/', (req, res) =>{
     res.render('home');
 })
 
+// Creating Redis client
+let redisClient;
+redisClient = redis.createClient({
+    url: process.env.REDIS_URL
+  }); 
 
 // Creating redis clinet instance
 (async()=>{
